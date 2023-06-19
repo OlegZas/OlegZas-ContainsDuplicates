@@ -1,5 +1,5 @@
-
-
+import java.util.HashSet;
+import java.util.Set;
 public class ContainsDuplicates {
     /**
      * Determine if an array of items contains any duplicate values. You should use a Set for this: remember that
@@ -7,7 +7,14 @@ public class ContainsDuplicates {
      * @param nums an array of ints.
      * @return true if nums contains any duplicate values, false if it does not.
      */
-    public boolean containsDuplicate(int[] nums){
-        return false;
+    public boolean containsDuplicate(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        for (int num : nums) {
+        if (set.contains(num)) {
+            return true;
+        }
+        set.add(num);
     }
-}
+
+        return false;
+}}
